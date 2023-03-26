@@ -1,0 +1,19 @@
+{
+  "extends": "./node_modules/gts/tsconfig-google.json",
+  "compilerOptions": {
+    "declaration": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop":true,
+    "noImplicitAny": false,
+    "lib": ["es6", "dom"],
+    "target": "es6", //default is es5
+    "module": "commonjs", //CommonJs style module in output
+    "outDir": "dist", //change the output directory
+    "resolveJsonModule": true, //to import out json database
+  },
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts"
+  ]
+}
