@@ -1,7 +1,9 @@
 'use strict';
 
+// eslint-disable-next-line node/no-unpublished-import
 import * as chai from 'chai';
 import chaiHttp = require('chai-http');
+// eslint-disable-next-line node/no-unpublished-import
 import 'mocha';
 import app from '../../src/app';
 import {User} from '../../src/model/user';

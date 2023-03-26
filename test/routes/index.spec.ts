@@ -1,5 +1,7 @@
+// eslint-disable-next-line node/no-unpublished-import
 import chai from 'chai';
 import chaiHttp from 'chai-http';
+// eslint-disable-next-line node/no-unpublished-import
 import 'mocha';
 import app from '../../src/app';
 

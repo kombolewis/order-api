@@ -1,16 +1,16 @@
-import {NextFunction, Request, Response} from 'express';
+import {Request, Response} from 'express';
 import {User} from '../model/user';
 
 let users: Array<User> = [];
 
-export let getUser = (req: Request, res: Response, next: NextFunction) => {
+export const getUser = (req: Request, res: Response) => {
   const username = req.params.username;
   const user = users.find(obj => obj.username === username);
   const httpStatusCode = user ? 200 : 404;
   return res.status(httpStatusCode).send(user);
 };
 
-export let addUser = (req: Request, res: Response, next: NextFunction) => {
+export const addUser = (req: Request, res: Response) => {
   const user: User = {
     // generic random value from 1 to 100 only for tests so far
     id: Math.floor(Math.random() * 100) + 1,
@@ -26,7 +26,7 @@ export let addUser = (req: Request, res: Response, next: NextFunction) => {
   return res.status(201).send(user);
 };
 
-export let updateUser = (req: Request, res: Response, next: NextFunction) => {
+export const updateUser = (req: Request, res: Response) => {
   const username = req.params.username;
   const userIndex = users.findIndex(item => item.username === username);
 
@@ -47,7 +47,7 @@ export let updateUser = (req: Request, res: Response, next: NextFunction) => {
   return res.status(204).send();
 };
 
-export let removeUser = (req: Request, res: Response, next: NextFunction) => {
+export const removeUser = (req: Request, res: Response) => {
   const username = req.params.username;
   const userIndex = users.findIndex(item => item.username === username);
 

@@ -1,7 +1,9 @@
 'use strict';
 
+// eslint-disable-next-line node/no-unpublished-import
 import * as chai from 'chai';
 import chaiHttp = require('chai-http');
+// eslint-disable-next-line node/no-unpublished-import
 import 'mocha';
 import app from '../../src/app';
 import Order from '../../src/model/order';
@@ -55,7 +57,7 @@ describe('userRoute', () => {
   it('should return the inventory for all users', async () => {
     return chai
       .request(app)
-      .get(`/store/inventory`)
+      .get('/store/inventory')
       .then(res => {
         expect(res.status).to.be.equal(200);
         expect(res.body[20].length).to.be.equal(1);
